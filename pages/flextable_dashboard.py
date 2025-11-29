@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect
-from conftest import base_url
+from conftest import base_url, table_url, table_name, table_description
 
 class FlextableDashboard:
 
@@ -22,15 +22,22 @@ class FlextableDashboard:
         self.enter_table_title_text_field = page.locator("#table-name")
         self.enter_table_description_text_field = page.get_by_role("textbox", name="Enter your table description")
         self.save_changes_button = page.get_by_role("button", name="Save changes")
-        self.save_table_success_alert = page.get_by_role("alert")
+        self.save_table_success_alert = page.get_by_text("Settings saved successfully.")
 
         # User's Variables
-        self.google_sheet_link = 'https://docs.google.com/spreadsheets/d/11qRH9xUuglOTIZa7JnWTVBYuGMT32ZhFuJ5_xypApGM/'
-        self.my_table_name = 'WPPOOL Assignment Table'
-        self.my_table_description = 'This table is given for performing assignment for WPPOOL QA Engineer Position'
+        self.google_sheet_link = table_url
+        self.my_table_name = table_name
+        self.my_table_description = table_description
 
         # Dashboard Table Verification Locators
         self.dashboard_table_locator = page.get_by_role("link", name=self.my_table_name)
+
+        # Dashboard Table Customization Locator
+        self.table_customization_tab_locator = page.locator("a").filter(has_text="Table customization")
+        self.show_table_title_checkbox= page.get_by_role("checkbox", name="Show Table title")
+        self.table_description_position_dropdown = page.locator("#description-position")
+        self.show_table_description_checkbox = page.get_by_role("checkbox", name="Show Table description below")
+
 
     def goto(self):
         # Navigates To Dashboard
@@ -54,6 +61,15 @@ class FlextableDashboard:
         self.enter_table_title_text_field.fill(self.my_table_name)
         self.enter_table_description_text_field.fill(self.my_table_description)
         self.save_changes_button.click()
+
+    def navigate_to_table_customization_tab(self):
+        self.dashboard_table_locator.click()
+        self.table_customization_tab_locator.click()
+        self.show_table_title_checkbox.check()
+        self.table_description_position_dropdown.select_option("below")
+        self.show_table_description_checkbox.check()
+        self.save_changes_button.click()
+        self.save_table_success_alert.is_visible()
 
     def verify_dashboard_table(self):
         self.goto()

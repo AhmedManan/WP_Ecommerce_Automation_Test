@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect
-from conftest import base_url
+from conftest import base_url, table_url, table_name, table_description
 
 class ShortcodeFunctionalityTestPage:
 
@@ -27,6 +27,12 @@ class ShortcodeFunctionalityTestPage:
         self.shortcode_option_textbox= page.get_by_role("textbox", name="Shortcode text")
         self.page_save_button = page.get_by_role("button", name="Save", exact=True)
 
+        # Locator if Table exist
+        self.table_title= page.get_by_role("heading", name=table_name)
+        self.table_description= page.get_by_text(table_description)
+        self.table_warper= self.page.locator("#create_tables_wrapper")
+
+
 
 
     def goto(self):
@@ -39,11 +45,11 @@ class ShortcodeFunctionalityTestPage:
         return page_not_exists
 
     def create_page(self):
-            self.page.goto(base_url+self.add_page_url)
-            self.new_page_add_title.clear()
-            self.new_page_add_title.fill(self.new_page_title)
-            self.new_page_publish_button.click()
-            self.new_page_editor_publish_button.click()
+        self.page.goto(base_url+self.add_page_url)
+        self.new_page_add_title.clear()
+        self.new_page_add_title.fill(self.new_page_title)
+        self.new_page_publish_button.click()
+        self.new_page_editor_publish_button.click()
 
     def create_shortcode(self, shortcode:str):
         self.goto()
