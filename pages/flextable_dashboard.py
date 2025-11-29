@@ -58,3 +58,6 @@ class FlextableDashboard:
     def verify_dashboard_table(self):
         self.goto()
         expect(self.dashboard_table_locator).to_be_visible()
+
+    def copy_shortcode(self):
+        self.create_new_table()
