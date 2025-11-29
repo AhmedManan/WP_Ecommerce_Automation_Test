@@ -20,6 +20,12 @@ class ShortcodeFunctionalityTestPage:
         self.page_not_exists_message = page.get_by_text("Opps! The page you are looking for is missing")
 
         # Locator if Page exists
+        self.edit_page_menuitem= page.get_by_role("menuitem", name=" Edit Page")
+        self.adding_new_page_block= page.get_by_role("button", name="Add block")
+        self.browse_all_block_option= page.get_by_role("button", name="Browse all. This will open")
+        self.shortcode_option= page.get_by_role("option", name="Shortcode")
+        self.shortcode_option_textbox= page.get_by_role("textbox", name="Shortcode text")
+        self.page_save_button = page.get_by_role("button", name="Save", exact=True)
 
 
 
@@ -41,13 +47,14 @@ class ShortcodeFunctionalityTestPage:
 
     def create_shortcode(self, shortcode:str):
         self.goto()
-        self.page.get_by_role("menuitem", name=" Edit Page").click()
-        self.page.get_by_role("button", name="Add block").click()
-        self.page.get_by_role("button", name="Browse all. This will open").click()
-        self.page.get_by_role("option", name="Shortcode").click()
-        self.page.get_by_role("textbox", name="Shortcode text").click()
-        self.page.get_by_role("textbox", name="Shortcode text").fill(shortcode)
-        self.page.get_by_role("button", name="Save", exact=True).click()
-        self.page.get_by_test_id("snackbar").get_by_role("link", name="View Page").click()
+        self.edit_page_menuitem.click()
+        self.adding_new_page_block.click()
+        self.browse_all_block_option.click()
+        self.shortcode_option.click()
+        self.shortcode_option_textbox.click()
+        self.shortcode_option_textbox.fill(shortcode)
+        self.page_save_button.click()
+        self.goto()
+        # self.page.get_by_test_id("snackbar").get_by_role("link", name="View Page").click()
 
 
