@@ -13,7 +13,7 @@ class TestTableCustomization:
 
         flextable_dashboard = FlextableDashboard(page)
         flextable_dashboard.goto()
-        flextable_dashboard.navigate_to_table_customization_tab()
+        flextable_dashboard.navigate_to_table_customization_title_description()
 
         shortcode_test_page = ShortcodeFunctionalityTestPage(page)
         shortcode_test_page.goto()

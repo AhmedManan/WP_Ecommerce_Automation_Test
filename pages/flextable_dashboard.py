@@ -12,7 +12,7 @@ class FlextableDashboard:
         self.dashboard_heading = page.get_by_role("heading", name="All Tables")
 
         self.dashboard_sub_heading = page.locator("text=Manage, create and track all")
-        self.dashboard_help_link = page.get_by_role("link", name="Help")
+        self.dashboard_help_link = page.get_by_role("link", name="Help", exact=True)
         self.dashboard_upgrade_link = page.get_by_role("link", name="Upgrade", exact=True)
 
         # Table Locators
@@ -37,6 +37,9 @@ class FlextableDashboard:
         self.show_table_title_checkbox= page.get_by_role("checkbox", name="Show Table title")
         self.table_description_position_dropdown = page.locator("#description-position")
         self.show_table_description_checkbox = page.get_by_role("checkbox", name="Show Table description below")
+        self.show_entry_info_checkbox = page.get_by_role("checkbox", name="Show entry info")
+        self.show_table_pagination_checkbox= page.get_by_role("checkbox", name="Show pagination")
+
 
 
     def goto(self):
@@ -62,14 +65,23 @@ class FlextableDashboard:
         self.enter_table_description_text_field.fill(self.my_table_description)
         self.save_changes_button.click()
 
-    def navigate_to_table_customization_tab(self):
+    def navigate_to_table_customization_tab (self):
         self.dashboard_table_locator.click()
         self.table_customization_tab_locator.click()
+
+    def navigate_to_table_customization_title_description(self):
+        self.navigate_to_table_customization_tab()
         self.show_table_title_checkbox.check()
         self.table_description_position_dropdown.select_option("below")
         self.show_table_description_checkbox.check()
         self.save_changes_button.click()
         self.save_table_success_alert.is_visible()
+
+    def navigate_to_table_customization_entry_level_pagination(self):
+        self.navigate_to_table_customization_tab()
+        self.show_entry_info_checkbox.check()
+        self.show_table_pagination_checkbox.check()
+        self.save_changes_button.click()
 
     def verify_dashboard_table(self):
         self.goto()

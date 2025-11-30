@@ -31,6 +31,8 @@ class ShortcodeFunctionalityTestPage:
         self.table_title= page.get_by_role("heading", name=table_name)
         self.table_description= page.get_by_text(table_description)
         self.table_warper= self.page.locator("#create_tables_wrapper")
+        self.entry_level_css_locator= page.locator('#create_tables_info')
+        self.table_pagination_css_locator= page.locator('#create_tables_info')
 
 
 
@@ -63,4 +65,9 @@ class ShortcodeFunctionalityTestPage:
         self.goto()
         # self.page.get_by_test_id("snackbar").get_by_role("link", name="View Page").click()
 
+    def check_entry_level_exist(self):
+        expect(self.entry_level_css_locator).to_be_visible()
+
+    def check_pagination_exist(self):
+        expect(self.table_pagination_css_locator).to_be_visible()
 
