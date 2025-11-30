@@ -34,6 +34,8 @@ class ShortcodeFunctionalityTestPage:
         self.entry_level_css_locator= page.locator('#create_tables_info')
         self.table_pagination_css_locator= page.locator('#create_tables_info')
 
+        # Locator if Table Deleted
+        self.table_deleted_text = page.get_by_role("heading", name="Table maybe deleted or can't")
 
 
 
@@ -67,6 +69,9 @@ class ShortcodeFunctionalityTestPage:
 
     def check_table_exist(self):
         expect(self.table_warper).to_be_visible()
+
+    def check_table_deleted(self):
+        expect(self.table_deleted_text).to_be_visible()
 
     def check_entry_level_exist(self):
         expect(self.entry_level_css_locator).to_be_visible()

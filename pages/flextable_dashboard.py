@@ -17,6 +17,8 @@ class FlextableDashboard:
 
         # Table Locators
         self.create_new_table_button = page.get_by_role("button", name="Create new table")
+        self.table_delete_button_locator = page.locator(".table-delete")
+        self.confirm_table_delete_confirm_button= page.get_by_role("button", name="Delete")
         self.url_sheet_text_field = page.get_by_role("textbox", name="Paste your Google Sheet URL")
         self.create_table_from_url_button = page.get_by_role("button", name="Create table from URL")
         self.enter_table_title_text_field = page.locator("#table-name")
@@ -60,6 +62,10 @@ class FlextableDashboard:
         expect(self.dashboard_sub_heading).to_be_visible()
         expect(self.dashboard_help_link).to_be_visible()
         expect(self.dashboard_upgrade_link).to_be_visible()
+
+    def delete_table(self):
+        self.table_delete_button_locator.click()
+        self.confirm_table_delete_confirm_button.click()
 
     def create_new_table(self):
         self.create_new_table_button.click()
