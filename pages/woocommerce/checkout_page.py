@@ -24,7 +24,7 @@ class CheckoutPage:
         self.total_price_amount_css_locator = page.locator('.wc-block-components-totals-footer-item-tax-value')
 
         # User Locators
-        self.user_email = 'test@user.com'
+        self.user_email = 'test@gmail.com'
         self.user_first_name = 'Manan'
         self.user_last_name = 'SQA'
         self.user_address = 'Bashundhara R/A'

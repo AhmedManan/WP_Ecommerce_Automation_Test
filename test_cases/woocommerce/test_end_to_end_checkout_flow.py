@@ -1,4 +1,6 @@
 from playwright.sync_api import Page
+
+from pages.woocommerce.order_history_page import OrderHistoryPage
 from pages.woocommerce.product_page import ProductPage
 from pages.woocommerce.checkout_page import CheckoutPage
 from pages.woocommerce.cart_page import CartPage
@@ -40,3 +42,7 @@ class TestCheckoutFlow:
         # checkout_page.goto()
         checkout_page.contact_shipping_form()
         checkout_page.place_order()
+
+        order_history = OrderHistoryPage(page)
+        order_history.goto()
+        page.pause()
