@@ -32,6 +32,7 @@ class TestShortcode:
 
         shortcode_page= ShortcodeFunctionalityTestPage(page)
         shortcode_page.goto()
+        shortcode_page.table_match_with_google()
 
         # container_width = shortcode_page.get_container_width()
         table_width = shortcode_page.get_table_width()
@@ -42,16 +43,16 @@ class TestShortcode:
 
 
         # To ensure elements were found and measured
-        assert warper_width > 0, "Failed to get width of the main content container."
-        assert table_width > 0, "Failed to get width of the problematic table."
+        assert warper_width > 0, print("Failed to get width of the main content container.")
+        assert table_width > 0, print("Failed to get width of the problematic table.")
 
         width_tolerance = 1.0
         # The table width must be less than or equal to the container width, plus a small tolerance.
         # assert table_width <= (warper_width + width_tolerance), (
         if table_width <= (warper_width + width_tolerance):
-            f"Layout Broken: Table (Width: {table_width:.2f}px) is overflowing "
-            f"its Container (Width: {warper_width:.2f}px). "
-            "This likely causes horizontal scrolling."
+            print(f"Layout Broken: Table (Width: {table_width:.2f}px) is overflowing ")
+            print(f"its Container (Width: {warper_width:.2f}px). ")
+            print("This likely causes horizontal scrolling.")
             shortcode_page.problematic_table.screenshot(path="screenshots/Verify Table Display Using Shortcode Layout Error.png")
 
 
@@ -61,5 +62,5 @@ class TestShortcode:
 
         # Use assert, I used if to continue the test
         if scroll_width <= viewport_width + width_tolerance:
-            "Horizontal scrollbar detected, indicating layout overflow."
+            print("Horizontal scrollbar detected, indicating layout overflow.")
 

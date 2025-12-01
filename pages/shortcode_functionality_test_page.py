@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
 from conftest import base_url, table_url, table_name, table_description
+from utils.table_data_utils import flextable_all_values
 
 class ShortcodeFunctionalityTestPage:
 
@@ -43,6 +44,20 @@ class ShortcodeFunctionalityTestPage:
         self.problematic_table = page.locator(".gswpts_tables_content")
         self.problematic_column_xpath = page.locator('//article//table/tbody/tr[4]/td[*]')
 
+        # Locators to test table matches the Google Sheet data
+        self.table_data_1 = page.get_by_role("gridcell", name="Tahsin")
+        self.table_data_2 = page.get_by_role("gridcell", name="Arafat")
+        self.table_data_3 = page.get_by_role("gridcell", name="This exceptional product")
+        self.table_data_4 = page.get_by_role("gridcell", name="https://example.com/72")
+
+        # User Variables
+        # Correct Variable Assignment (assuming you want to check all four locators)
+        self.cell_value_01 = flextable_all_values[0]  # Tahsin
+        self.cell_value_02 = flextable_all_values[7]  # Arafat
+        self.cell_value_03 = flextable_all_values[6]  # This exceptional product...
+        self.cell_value_04 = flextable_all_values[31]  # https://example.com/72 ⬅️ New variable
+
+
 
 
     def goto(self):
@@ -79,10 +94,14 @@ class ShortcodeFunctionalityTestPage:
     def check_shortcode_exist(self):
         if self.page_shortcode_block_textfield_xpath.is_visible():
             self.page_shortcode_block_textfield_xpath.clear()
-            self.page_shortcode_block_textfield_xpath.fill(shortcode)
         else:
             pass
 
+    def table_match_with_google(self):
+        expect(self.table_data_2).to_have_text(self.cell_value_02)
+        expect(self.table_data_2).to_have_text(self.cell_value_02)
+        expect(self.table_data_3).to_have_text(self.cell_value_03)
+        expect(self.table_data_4).to_have_text(self.cell_value_04)
 
     def check_table_deleted(self):
         expect(self.table_warper).not_to_be_visible()
