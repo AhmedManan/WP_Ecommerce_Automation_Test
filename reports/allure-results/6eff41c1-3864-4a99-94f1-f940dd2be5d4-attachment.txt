@@ -1,0 +1,9 @@
+[gswpts_table id="1"]
+The Value Is:::::::: True
+
+Table warper Width: 1170.0000228881836px
+
+Table Width: 1170.0000228881836px
+Layout Broken: Table (Width: 1170.00px) is overflowing 
+its Container (Width: 1170.00px). 
+This likely causes horizontal scrolling.

@@ -23,10 +23,10 @@ class TestPluginPage:
             # If plugin is deactivated, activate plugin
             plugin_page.activate_plugin()
 
-        elif plugin_page.deactivate_plugin_link.is_visible():
-            print("Plugin is Activated. Deactivating...")
-            # # If plugin is activated, deactivate plugin
-            plugin_page.deactivate_plugin()
+        # elif plugin_page.deactivate_plugin_link.is_visible():
+        #     print("Plugin is Activated. Deactivating...")
+        #     # If plugin is activated, deactivate plugin
+        #     plugin_page.deactivate_plugin()
 
         # If neither link is visible, install the plugin zip file.
         else:
