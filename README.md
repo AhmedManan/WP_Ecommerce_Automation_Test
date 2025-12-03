@@ -88,6 +88,9 @@ The easiest way to view the report locally is to use the allure serve command, w
  ```bash
 allure serve reports/allure-results
 ```
+| Allure Report | HTML Report |
+|-------------|--------|
+| <img width="500" height="912" alt="Allure_Report_front_page" src="https://github.com/user-attachments/assets/9794a1ed-e934-4e92-98ce-77de2809d846" /> | <img width="500" height="1032" alt="all_html_report" src="https://github.com/user-attachments/assets/1872d1c6-c1c7-460b-8afd-1aa9207d7bd6" />|
 ## ✔️ Tests
 ### Part A: FlexTable Plugin
 
