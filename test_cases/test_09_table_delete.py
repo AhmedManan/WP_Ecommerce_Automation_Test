@@ -7,7 +7,7 @@ class TestTableDelete:
 
     def test_table_delete(self, page: Page):
         # ------------------------------------
-        """Update 'Rows Per Page & Table Height'"""
+        """Delete the Table and Verify Frontend Removal"""
         # ------------------------------------
         login = LoginPage(page)
         login.login()
