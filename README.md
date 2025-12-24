@@ -1,8 +1,10 @@
-# QA WPPOOL Assignment
+# Playwright WordPress Plugin Test
 In this repository contains an automation test suite built with ***Playwright***, ***Python*** & ***Pytest***. I implement the Page Object Model (POM) design pattern. The test suite covers:
 
 - FlexTable Plugin
 - WooCommerce
+
+Project Documentation PDF: <a href="https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/Document/Playwright_WordPress_Plugin_Automation_Test.pdf" target="_blank">Playwright_WordPress_Plugin_Automation_Test.pdf</a>
 
 ## Table Of Content
 - [View Live Report](#-view-live-report)
@@ -65,7 +67,7 @@ ADMIN_PASSWORD= Admin Password
 # Default values you may change
 TABLE_URL= Google Spreadsheets URL 
 TABLE_NAME='Table Name'
-TABLE_DESCRIPTION='This table is created from google sheet to perform automation test on WPPOOL flextable plugin'
+TABLE_DESCRIPTION='This table is created from google sheet to perform automation test on WordPress Plugin'
 
 ```   
 ### Performing Tests
@@ -139,6 +141,8 @@ In this bellow mentioned project/repository, it contains an automation test suit
  **Project Link:** [JS_Playwright_WP_Plugin_Test](https://github.com/AhmedManan/JS_Playwright_WP_Plugin_Test)
 
 ### Similar Topics & Articles
+
+[WordPress Ecommerce Website Automation Test](https://github.com/AhmedManan/WP_Ecommerce_Automation_Test)
 
 [Python Complete Cheat Sheet](https://mananacademy.com/complete-python-cheat-sheet/)
 
