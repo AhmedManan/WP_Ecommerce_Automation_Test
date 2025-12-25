@@ -4,10 +4,11 @@ In this repository contains an automation test suite built with Playwright, Pyth
 - FlexTable Plugin
 - WooCommerce
 
-Project Documentation PDF: <a href="https://ahmedmanan.github.io/QA_WPPOOL_Assignment/documents/Playwright_WordPress_Plugin_Automation_Test.pdf" target="_blank">Playwright_WP_Ecommerce_Website_Automation_Test.pdf</a>
+Project Documentation PDF: <a href="https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/documents/Playwright_WordPress_Plugin_Automation_Test.pdf" target="_blank">Playwright_WP_Ecommerce_Website_Automation_Test.pdf</a>
 
 ## Table Of Content
 - [View Live Report](#view-live-report)
+- [Bugs or Issues](#Bugs-or-Issues)
 - [Project Setup](#-project-setup)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -24,17 +25,17 @@ Project Documentation PDF: <a href="https://ahmedmanan.github.io/QA_WPPOOL_Assig
 
 ## View Live Report
 Check the test report live:
-- Allure Report: [View Allure Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/test_reports/allure-report/index.html)
-- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/QA_WPPOOL_Assignment/test_reports/index.html)
+- Allure Report: [View Allure Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/test_reports/allure-report/index.html)
+- HTML Report: [View HTML Self Contained Report](https://ahmedmanan.github.io/WP_Ecommerce_Automation_Test/test_reports/report.html)
 
-## Bugs/Issues
-During the test execution, I have experienced multiple bugs & issues. I have reported the in the [Project GitHub Issues](https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/issues)
+## Bugs or Issues
+During the test execution, I have experienced multiple bugs & issues. I have reported them in the [Project GitHub Issues](https://github.com/AhmedManan/WP_Ecommerce_Automation_Test/issues)
 
-| Issue | Description                               | Link                                                                                      | Status |
-|-------|-------------------------------------------|-------------------------------------------------------------------------------------------|----|
-| 01    | Spelling mistake in plugin documentation  | [View Issue](https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/issues/1) | ❌ |
-| 02    | Invalid table shortcode in plugin dashboard page | [View Issue](https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/issues/2) | ❌ |
-| 02    | Broken or malformed                       | [View Issue](https://github.com/AhmedManan/Playwright_WP_Plugin_Automation_Test/issues/3) | ❌ |
+| Issue | Description                               | Link                                                                                | Status |
+|-------|-------------------------------------------|-------------------------------------------------------------------------------------|----|
+| 01    | Spelling mistake in plugin documentation  | [View Issue](https://github.com/AhmedManan/WP_Ecommerce_Automation_Test/issues/1) | ❌ |
+| 02    | Invalid table shortcode in plugin dashboard page | [View Issue](https://github.com/AhmedManan/WP_Ecommerce_Automation_Test/issues/2) | ❌ |
+| 02    | Broken or malformed                       | [View Issue](https://github.com/AhmedManan/WP_Ecommerce_Automation_Test/issues/3) | ❌ |
 
 ## ⚙️ Project Setup
 
